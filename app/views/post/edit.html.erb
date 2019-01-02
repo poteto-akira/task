@@ -1,0 +1,21 @@
+<h1>編集</h1>
+
+<div>
+  <%= form_tag("/post/update/#{@post.id}") do %>
+    <p>タスク名</p>
+    <div>
+      <input name="name" placeholder="" type="text" autocomplete="off" value="<%= @post.name %>"></input>
+    </div>
+
+    <p>メモ</p>
+    <div>
+      <textarea name="content" placeholder="" type="text" autocomplete="off"><%= @post.content %></textarea>
+    </div>
+
+    <div>
+      <input class="submit" type="submit" value="登録">
+    </div>
+  <% end %>
+
+  <%= link_to("削除する", "/post/destroy/#{@post.id}", {method: "post"}) %>
+</div>

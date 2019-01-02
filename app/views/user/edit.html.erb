@@ -1,0 +1,27 @@
+<h2>ユーザー編集</h2>
+
+<%= form_for @user, :url => {:action => "update"} do |f| %>
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username, class: 'form-control' %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+  <div>
+    <%= f.submit "Save changes", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
+
+<% if current_user  %>
+<%= link_to("Log out",logout_path, method: :delete) %>
+
+  <%= link_to("Delete account", "/user/delete/#{current_user.id}", method: :delete,
+              data: { confirm: "本当に削除しますか？一度削除すると復元ができなくなります"}) %>
+<% end %>

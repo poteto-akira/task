@@ -1,0 +1,44 @@
+<%= form_tag("/post/create") do %>
+  <div>
+    <input name="name" id="input1" placeholder="タスク名" type="text" autocomplete="off"></input>
+  </div>
+  <div>
+    <textarea name="content" placeholder="メモ" type="text" autocomplete="off"></textarea>
+  </div>
+  <div>
+    <p>終了期限</p>
+    <%= check_box_tag :deadline_check %>
+    <%= datetime_select(
+        :deadline,
+        :date,
+        start_year: 1900,
+        end_year: 2200,
+        date_separator: '/',
+        use_month_numbers: '')
+    %>
+  </div>
+  <div>
+    <p>優先順位</p>
+    <label><%= radio_button "priority", "p", 3 %>高</label>
+    <label><%= radio_button "priority", "p", 2 %>中</label>
+    <label><%= radio_button "priority", "p", 1 %>低</label>
+  <div>
+    <input class="submit" id="submit1" type="submit" value="登録">
+  </div>
+<% end %>
+
+    <!-- フォームに１文字以上入力しないとsubmitボタンが有効にならない -->
+    <script>
+      $(function(){
+        if ($("#input1").val().length == 0) {
+          $("#submit1").prop("disabled", true);
+        }
+        $("#input1").on("keydown keyup keypress change", function() {
+          if ($(this).val().length < 1) {
+            $("#submit1").prop("disabled", true);
+          } else {
+            $("#submit1").prop("disabled", false);
+          }
+        });
+      });
+    </script>

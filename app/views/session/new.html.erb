@@ -1,0 +1,25 @@
+<h2>ログイン</h2>
+
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <p>ユーザー名(半角英数字のみ)</p>
+  <div>
+    <input name="session[username]" id="input1" placeholder="半角英数字のみ" type="text" autocomplete="off">
+  </div>
+
+  <p>パスワード</p>
+  <div>
+    <input name="session[password]" placeholder="6文字以上" type="password" autocomplete="off">
+  </div>
+
+  <%= f.label :remember_me, class: "checkbox inline" do %>
+    <%= f.check_box :remember_me %>
+    <span>Remember me on this computer</span>
+  <% end %>
+
+  <div>
+    <input class="submit" id="submit1" type="submit" value="登録">
+  </div>
+<% end %>
+
+<p>New user? <%= link_to "Sign up now!", "/user/new" %></p>

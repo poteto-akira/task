@@ -1,0 +1,28 @@
+<table>
+  <thead>
+  <tr>
+    <th><%= sortable "created_at", "created_at" %></th>
+    <th><%= sortable "deadline", "deadline" %></th>
+    <th><%= sortable "priority", "priority" %></th>
+  </tr>
+  </thead>
+</table>
+<table>
+  <tr>
+    <th>State</th>
+    <th>Priority</th>
+    <th>Limit</th>
+    <th>Post</th>
+  </tr>
+  <% @posts.each do |post| %>
+    <% if post.user_id == current_user.id %>
+      <tr>
+        <td><%= status(post.current_state) %>/<%= post.current_state %></td>
+        <td><%= priority_state(post.priority) %></td>
+        <td><%= post.deadline %></td>
+        <td><%= link_to(post.name ,"/post/show/#{post.id}") %> / <%= link_to("次","/post/next/#{post.id}") %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  <%= paginate @posts %>
+</table>

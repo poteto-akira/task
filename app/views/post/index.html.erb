@@ -1,0 +1,18 @@
+<div class="main">
+  <%= render ("new") %>
+
+  <% if logged_in? %>
+    <h1>タスク一覧</h1>
+    <p>検索</p>
+    <%= form_tag("/", :method => 'get') do %>
+      <%= text_field_tag :search %>
+      <label><input name="current_state" type="checkbox" value=1 />TODO</label>
+      <label><input name="current_state" type="checkbox" value=2 />DOING</label>
+      <label><input name="current_state" type="checkbox" value=3 />DONE</label>
+      <%= submit_tag "Search", :name => nil %>
+    <% end %>
+    <%= render partial: 'posts' %>
+    
+  <% end %>
+
+</div>

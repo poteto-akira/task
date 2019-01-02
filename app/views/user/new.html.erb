@@ -1,0 +1,28 @@
+<h2>新規ユーザー登録</h2>
+
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+
+<%= form_for user_new_path do |f| %>
+<p>ユーザー名(半角英数字のみ)</p>
+  <div>
+    <input name="user[username]" id="input1" placeholder="半角英数字のみ" type="text" autocomplete="off">
+  </div>
+
+  <p>パスワード</p>
+  <div>
+    <input name="user[password]" placeholder="6文字以上" type="password" autocomplete="off">
+  </div>
+
+  <p>確認</p>
+  <div>
+    <input name="user[password_confirmation]" placeholder="6文字以上" type="password" autocomplete="off">
+  </div>
+
+  <div>
+    <input class="submit" id="submit1" type="submit" value="登録">
+  </div>
+<% end %>
