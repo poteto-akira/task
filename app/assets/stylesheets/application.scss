@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+ /* // Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+
+html {
+  background-color: transparent;
+  background-image: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+  padding-bottom: 50px;
+}
+
+.header h1 {
+	margin-right: auto;
+}
+
+.header ul {
+	display: flex;
+}
+
+.header li {
+	margin-left: 3rem;
+}
+
+@media screen and (max-width: 768px){
+	.header {
+		flex-direction: column;
+	}
+
+	.header h1 {
+		margin: 0 auto 3rem;
+	}
+
+	.header li {
+		margin: 0 1rem;
+	}
+}
+
+@media screen and (max-width: 568px){
+	.header li {
+		margin: 0 .5rem;
+		font-size: 1.2rem;
+	}
+}
+
+.form {
+  text-align: center;
+}
+
+.input {
+  padding: 10px;
+}
+
+.textarea {
+  padding: 10px;
+}
+
+.deadline-box {
+  padding: 10px;
+}
+
+.deadline-text {
+  margin: 0;
+}
+
+.priority-box {
+  padding: 10px;
+}
+
+.priority-text {
+  margin: 0;
+}
+
+.search-box {
+  text-align: center;
+  padding: 20px;
+}
+
+table {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+tbody {
+}
+
+table th {
+  text-align: center;
+}
+
+.sort {
+  width: 120px;
+  padding: 30px 0;
+}
+
+.pagination {
+  padding-left: 100px !important;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.posts-table {
+  margin: 10px auto 50px auto;
+  text-align: center;
+}
+
+tr {
+  height: 30px;
+}

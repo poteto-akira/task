@@ -1,13 +1,13 @@
 <table>
   <thead>
   <tr>
-    <th><%= sortable "created_at", "created_at" %></th>
-    <th><%= sortable "deadline", "deadline" %></th>
-    <th><%= sortable "priority", "priority" %></th>
+    <th class="sort"><%= sortable "created_at", "created_at" %></th>
+    <th class="sort"><%= sortable "deadline", "deadline" %></th>
+    <th class="sort"><%= sortable "priority", "priority" %></th>
   </tr>
   </thead>
 </table>
-<table>
+<table class="posts-table">
   <tr>
     <th>State</th>
     <th>Priority</th>
@@ -24,5 +24,5 @@
       </tr>
     <% end %>
   <% end %>
-  <%= paginate @posts %>
 </table>
+<%= paginate @posts %>

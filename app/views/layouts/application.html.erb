@@ -5,26 +5,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
   </head>
 
   <body>
 
     <!-- ヘッダーエリア -->
-    <% if logged_in? %>
-    <ul class="header">
-      <li><%= current_user.username %></li>
-      <li><%= link_to("Home","/") %></li>
-      <li><%= link_to("Users","#") %></li>
-      <li><%= link_to("Profile","#") %></li>
-      <li><%= link_to("Settings", "/user/edit/#{current_user.id}" ) %></li>
-    </ul>
-
-    <% else %>
-      <%= link_to("Log in",login_path) %>
-      <%= link_to("Sign up",user_new_path) %>
-    <% end %>
+    <header class="header">
+    	<h1>タスク管理</h1>
+    	<nav>
+    		<ul>
+    			<li><%= current_user.username %></li>
+          <li><%= link_to("Home","/") %></li>
+          <li><%= link_to("Users","#") %></li>
+          <li><%= link_to("Profile","#") %></li>
+          <li><%= link_to("Settings", "/user/edit/#{current_user.id}" ) %></li>
+    		</ul>
+    	</nav>
+    </header>
 
     <!-- フラッシュメッセージ -->
     <% if flash[:notice] %>
