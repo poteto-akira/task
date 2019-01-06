@@ -1,24 +1,8 @@
-# README
+# タスク管理アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+- 万葉株式会社の新入社員研修のタスク管理システムを作成するチュートリアルを実施
+- https://github.com/poteto-akira/el-training/blob/master/docs/el-training.md
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- 完成URL https://arcane-oasis-64644.herokuapp.com/
